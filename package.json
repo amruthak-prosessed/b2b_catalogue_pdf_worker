@@ -3,6 +3,9 @@
     "dev": "tsx watch src/index.ts",
     "start": "tsx src/index.ts"
   },
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "dependencies": {
     "@supabase/supabase-js": "^2.108.2",
     "dotenv": "^17.4.2",
