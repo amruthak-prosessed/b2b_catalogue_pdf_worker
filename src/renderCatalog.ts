@@ -78,10 +78,13 @@ export async function renderCatalog(
   // 5. START BROWSER
   // =========================================================
 
-  const browser =
-    await puppeteer.launch({
-      headless: true,
-    });
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+    ],
+  });
 
   try {
     const page =
