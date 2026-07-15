@@ -11,12 +11,6 @@ export function generateCoverPage(
   const productCount =
     catalog.catalog_products.length;
 
-  const categoryCount = new Set(
-    catalog.catalog_products.map(
-      (p: any) => p.products.category
-    )
-  ).size;
-
   /*
    * Get brands ONLY from products
    * present in this catalogue.
@@ -224,11 +218,11 @@ Products
 
 <div class="countBox">
 
-${categoryCount}
+${brandsInCatalog.length}
 
 <br>
 
-Categories
+Suppliers
 
 </div>
 

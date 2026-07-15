@@ -56,9 +56,17 @@ export function generateCategoryPage(
         data-category="${safeCategory}"
       >
 
-        <h2 class="categoryHeading">
-          ${category}
-        </h2>
+        <div class="categoryTitleRow">
+
+          <h2 class="categoryHeading">
+            ${category}
+          </h2>
+
+          <span class="categoryCount">
+            ${products.length} Items
+          </span>
+
+        </div>
 
         <div class="productRows">
           ${rowsHtml}

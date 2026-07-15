@@ -66,11 +66,7 @@ SKU : ${product.products.sku}
 ${
 settings.showLogo
 ? `
-<div class="productBrand">
 
-${product.products.brand}
-
-</div>
 `
 : ""
 }
