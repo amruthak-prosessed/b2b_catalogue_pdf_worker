@@ -1,6 +1,8 @@
 import puppeteer from "puppeteer";
 import { supabase } from "./index";
 import { generateCatalogHTML } from "./catalogTemplate";
+import { generateBentoCatalogHTML } from "./templates/bento/bentoTemplate";
+
 
 export async function renderCatalog(
   catalogId: string
@@ -67,12 +69,30 @@ export async function renderCatalog(
   // 4. GENERATE HTML
   // =========================================================
 
-  const html =
-    generateCatalogHTML(
+  let html: string;
+
+console.log(
+  `Generating catalog with theme: ${catalog.theme}`
+);
+
+switch (catalog.theme) {
+  case "bento":
+    html = generateBentoCatalogHTML(
       catalog,
       supplierLogos ?? [],
       assets ?? []
     );
+    break;
+
+  case "classic":
+  default:
+    html = generateCatalogHTML(
+      catalog,
+      supplierLogos ?? [],
+      assets ?? []
+    );
+    break;
+}
 
   // =========================================================
   // 5. START BROWSER
