@@ -1,7 +1,7 @@
-import { generateSupplierHeader } from "./components/SupplierHeader";
-import { generateProductCard } from "./components/ProductCard";
-import { generateFooter } from "./components/Footer";
-import { chunkArray } from "./components/chunkArray";
+import { generateSupplierHeader } from "../components/SupplierHeader";
+import { generateProductCard } from "../components/ProductCard";
+import { generateFooter } from "../components/Footer";
+import { chunkArray } from "../components/chunkArray";
 
 export function generateCategoryPage(
   catalog: any,

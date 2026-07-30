@@ -1,5 +1,6 @@
-import { generateFooter } from "./components/Footer";
-import { generateSupplierHeader } from "./components/SupplierHeader";
+import { generateSupplierHeader } from "../components/SupplierHeader";
+import { generateFooter } from "../components/Footer";
+
 
 export function generateSupplierPage(
     catalog,

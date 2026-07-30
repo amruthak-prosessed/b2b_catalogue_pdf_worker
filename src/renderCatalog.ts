@@ -1,8 +1,7 @@
 import puppeteer from "puppeteer";
 import { supabase } from "./index";
-import { generateCatalogHTML } from "./catalogTemplate";
 import { generateBentoCatalogHTML } from "./templates/bento/bentoTemplate";
-
+import { generateCatalogHTML } from "./templates/classic/classicTemplate";
 
 export async function renderCatalog(
   catalogId: string
@@ -69,14 +68,18 @@ export async function renderCatalog(
   // 4. GENERATE HTML
   // =========================================================
 
-  let html: string;
+let html: string;
+
+const theme = catalog.config?.theme ?? "classic";
 
 console.log(
-  `Generating catalog with theme: ${catalog.theme}`
+  `Generating catalog with theme: ${theme}`
 );
 
-switch (catalog.theme) {
+switch (theme) {
   case "bento":
+    console.log("Using Bento template");
+
     html = generateBentoCatalogHTML(
       catalog,
       supplierLogos ?? [],
@@ -86,6 +89,8 @@ switch (catalog.theme) {
 
   case "classic":
   default:
+    console.log("Using Classic template");
+
     html = generateCatalogHTML(
       catalog,
       supplierLogos ?? [],

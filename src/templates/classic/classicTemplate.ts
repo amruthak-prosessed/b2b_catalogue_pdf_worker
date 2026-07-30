@@ -1,6 +1,8 @@
-import { generateCoverPage } from "./templates/coverPage";
-import { generateSupplierPage } from "./templates/supplierPage";
-import { generateCategoryPage } from "./templates/categoryPage";
+import { generateCoverPage } from "./classicCoverPage";
+import { generateSupplierPage } from "./classicSupplierPage";
+import { generateCategoryPage } from "./classicCategoryPage";
+import { generateProductCard } from "./classicProductCard";
+
 
 
 export function generateCatalogHTML(

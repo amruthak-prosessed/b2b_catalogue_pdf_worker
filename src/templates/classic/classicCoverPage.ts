@@ -1,4 +1,4 @@
-import { generateFooter } from "./components/Footer";
+import { generateFooter } from "../components/Footer";
 
 export function generateCoverPage(
   catalog: any,
@@ -230,21 +230,6 @@ Suppliers
 
 </div>
 
-
-${
-bannerUrl
-? `
-<div class="banner">
-
-<img
-src="${bannerUrl}"
-class="bannerImage"
-/>
-
-</div>
-`
-: ""
-}
 
 
 <div class="section">
